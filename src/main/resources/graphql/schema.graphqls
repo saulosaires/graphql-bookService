@@ -1,0 +1,43 @@
+type Book {
+    id: ID!
+    title: String!
+    isbn: String
+    rating: Float
+    published: String
+    categories: [Category]!
+    authors :[Author]!
+}
+
+type Author {
+    id: ID!
+    firstName :String!
+    lastName :String!
+    birthDate: String!
+}
+
+type Category {
+    id: ID!
+    name :String!
+}
+
+type Query {
+    bookById(id:Float): Book!
+    findAllBooks: [Book]
+}
+
+type Mutation {
+    createBook(book: BookInput): Book
+    updateBook(book: BookInput): Book
+}
+
+
+input BookInput {
+    id: Float,
+    title: String!
+    isbn: String
+    rating: Float
+    published: String
+    authors: [ID]
+    categories: [ID]
+}
+
