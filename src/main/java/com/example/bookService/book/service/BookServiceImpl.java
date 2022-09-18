@@ -13,6 +13,7 @@ import java.util.Collection;
 
 @Service
 @Slf4j
+@Transactional
 public class BookServiceImpl implements BookService {
 
     @Autowired
@@ -53,10 +54,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transactional
     public Book updateRating(Long id, Double rating) throws BookException {
 
         bookRepository.findById(id).orElseThrow(() -> new BookException(String.format("Book not found id=[%d]", id)));
+
+        bookValidator.validateRating(rating);
 
         bookRepository.updateRating(id, rating);
 

@@ -20,9 +20,7 @@ public class GraphQLConfig {
                         graphQlBuilder.defaultDataFetcherExceptionHandler(new GraphQLExceptionHandler()));
     }
 
-
     public static class GraphQLExceptionHandler implements DataFetcherExceptionHandler {
-
 
         @Override
         public CompletableFuture<DataFetcherExceptionHandlerResult> handleException(DataFetcherExceptionHandlerParameters handlerParameters) {

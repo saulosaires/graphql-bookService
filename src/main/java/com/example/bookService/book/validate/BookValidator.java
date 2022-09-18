@@ -11,7 +11,6 @@ import java.util.Map;
 @Component
 public class BookValidator {
 
-
     public void validate(Book book) throws BookException {
 
         if (book == null)
@@ -30,17 +29,28 @@ public class BookValidator {
     private void validateTitle(Book book, Map<String, Object> errors) {
 
         if (!StringUtils.hasText(book.getTitle()))
-            errors.put("title", "Book Entity can not be empty");
+            errors.put("title", "Book Title can not be empty");
 
     }
 
     private void validateRating(Book book, Map<String, Object> errors) {
 
-        if (book.getRating() == null)
-            errors.put("Rating", "Book Rating can not be empty");
-
         if (book.getRating() < 0)
             errors.put("Rating", "Book Rating can not be less than Zero");
+
+    }
+
+    public void validateRating(Double rating) {
+
+        Book book = new Book();
+        book.setRating(rating);
+
+        Map<String, Object> errors = new HashMap<>();
+
+        validateRating(book, errors);
+
+        if (!errors.isEmpty())
+            throw new BookException("Rating not valid",errors);
 
     }
 

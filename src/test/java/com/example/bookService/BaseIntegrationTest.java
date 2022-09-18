@@ -6,21 +6,20 @@ import com.example.bookService.book.Book;
 import com.example.bookService.book.repository.BookRepository;
 import com.example.bookService.category.Category;
 import com.example.bookService.category.repository.CategoryRepository;
+import org.junit.jupiter.api.BeforeAll;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-@SpringBootApplication
-public class BookServiceApplication{
+@SpringBootTest
+@ActiveProfiles("test")
+public abstract class BaseIntegrationTest {
 
-    public static void main(String[] args) {
-        SpringApplication.run(BookServiceApplication.class, args);
-    }
 
 }
