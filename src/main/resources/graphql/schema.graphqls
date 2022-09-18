@@ -28,6 +28,7 @@ type Query {
 type Mutation {
     createBook(book: BookInput): Book
     updateBook(book: BookInput): Book
+    updateBookRating(id:Float, rating:Float): Book
 }
 
 

@@ -24,4 +24,9 @@ public class BookMutation {
         return bookFacade.update(book);
     }
 
+    @MutationMapping
+    public Book updateBookRating(@Argument Long id,@Argument Double rating) throws Exception {
+        return bookFacade.updateRating(id,rating);
+    }
+
 }

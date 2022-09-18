@@ -39,8 +39,7 @@ public class BookFacade {
     }
 
     public Book update(BookInput bookInput) throws Exception {
-
-        return  bookService.update(BookMapper.INSTANCE.toBook(bookInput));
+        return bookService.update(BookMapper.INSTANCE.toBook(bookInput));
     }
 
     private List<Author> fetchAuthors(List<Long> authorsId) {
@@ -69,4 +68,7 @@ public class BookFacade {
         return categories;
     }
 
+    public Book updateRating(Long id, Double rating) {
+        return bookService.updateRating(id, rating);
+    }
 }
