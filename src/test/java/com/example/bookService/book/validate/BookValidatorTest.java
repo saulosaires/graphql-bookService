@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -52,10 +53,24 @@ public class BookValidatorTest {
     }
 
     @Test
-    void Given_BookWithNoAuthors_When_Validate_Then_ShouldThrowException() {
+    void Given_BookWithNullAuthors_When_Validate_Then_ShouldThrowException() {
 
         Book book= createBook();
         book.setAuthors(null);
+
+        BookException thrown = Assertions.assertThrows(BookException.class, () -> validator.validate(book));
+
+        Assertions.assertEquals("Book not valid", thrown.getMessage());
+        Assertions.assertEquals(1, thrown.getExtensions().size());
+        Assertions.assertEquals("Book Should have at least one Author", thrown.getExtensions().get("Authors"));
+
+    }
+
+    @Test
+    void Given_BookWithEmptyAuthors_When_Validate_Then_ShouldThrowException() {
+
+        Book book= createBook();
+        book.setAuthors(Collections.emptyList());
 
         BookException thrown = Assertions.assertThrows(BookException.class, () -> validator.validate(book));
 
