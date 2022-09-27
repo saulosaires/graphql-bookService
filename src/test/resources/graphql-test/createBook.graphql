@@ -1,0 +1,20 @@
+mutation  createBook(
+                    $title: String!,
+                    $isbn: String,
+                    $rating: Float,
+                    $published: String,
+                    $authors: [ID],
+                    $categories: [ID] ) {
+    createBook(book: {
+        title: $title,
+        isbn: $isbn,
+        rating:  $rating,
+        published:  $published,
+        authors: $authors,
+        categories:$categories}) {
+
+        id
+
+    }
+}
+

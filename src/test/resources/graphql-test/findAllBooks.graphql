@@ -1,0 +1,9 @@
+query  findAllBooks {
+    findAllBooks {
+        id
+        title
+        isbn
+        rating
+        published
+    }
+}

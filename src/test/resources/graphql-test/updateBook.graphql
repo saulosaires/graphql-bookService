@@ -1,0 +1,17 @@
+mutation  updateBook( $id: Float,
+                    $title: String!,
+                    $isbn: String,
+                    $rating: Float,
+                    $published: String ) {
+    updateBook(book: {
+        id : $id,
+        title: $title,
+        isbn: $isbn,
+        rating:  $rating,
+        published:  $published}) {
+
+        id
+
+    }
+}
+

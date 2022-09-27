@@ -1,0 +1,9 @@
+query  bookById($id: Float) {
+    bookById(id: $id) {
+        id
+        title
+        isbn
+        rating
+        published
+    }
+}
