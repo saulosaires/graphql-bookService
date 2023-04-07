@@ -1,8 +1,6 @@
-package com.example.bookservice.controller;
+package com.example.bookservice.book;
 
 import com.example.bookservice.BaseControllerTest;
-import com.example.bookservice.book.Book;
-import com.example.bookservice.book.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.test.tester.GraphQlTester;
@@ -10,7 +8,8 @@ import org.springframework.graphql.test.tester.GraphQlTester;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class BookMutationTest extends BaseControllerTest {
 
@@ -25,7 +24,7 @@ class BookMutationTest extends BaseControllerTest {
 
         GraphQlTester.EntityList<Long> entityList = graphQlTester.documentName("createBook")
                 .variable("title", title)
-                .variable("isbn",isbn)
+                .variable("isbn", isbn)
                 .variable("rating", 4.4)
                 .variable("published", "1986-12-18")
                 .variable("authors", new long[]{1, 2})
@@ -35,7 +34,7 @@ class BookMutationTest extends BaseControllerTest {
                 .hasValue()
                 .entityList(Long.class);
 
-        Long id= entityList.get().get(0);
+        Long id = entityList.get().get(0);
 
         assertNotNull(bookService.findById(id));
 
@@ -61,10 +60,10 @@ class BookMutationTest extends BaseControllerTest {
 
         Book bookUpdated = bookService.findById(book.getId());
 
-        assertEquals(title,bookUpdated.getTitle());
-        assertEquals(isbn,bookUpdated.getIsbn());
-        assertEquals(5,bookUpdated.getRating());
-        assertEquals(LocalDate.of(2022,11,18),bookUpdated.getPublished());
+        assertEquals(title, bookUpdated.getTitle());
+        assertEquals(isbn, bookUpdated.getIsbn());
+        assertEquals(5, bookUpdated.getRating());
+        assertEquals(LocalDate.of(2022, 11, 18), bookUpdated.getPublished());
 
     }
 
@@ -82,10 +81,10 @@ class BookMutationTest extends BaseControllerTest {
 
         Book bookUpdated = bookService.findById(book.getId());
 
-        assertEquals(book.getTitle(),bookUpdated.getTitle());
-        assertEquals(book.getIsbn(),bookUpdated.getIsbn());
-        assertEquals(5,bookUpdated.getRating());
-        assertEquals(book.getPublished(),bookUpdated.getPublished());
+        assertEquals(book.getTitle(), bookUpdated.getTitle());
+        assertEquals(book.getIsbn(), bookUpdated.getIsbn());
+        assertEquals(5, bookUpdated.getRating());
+        assertEquals(book.getPublished(), bookUpdated.getPublished());
 
     }
 

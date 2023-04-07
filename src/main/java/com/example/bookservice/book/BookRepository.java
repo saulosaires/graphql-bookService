@@ -1,4 +1,4 @@
-package com.example.bookservice.book.repository;
+package com.example.bookservice.book;
 
 import com.example.bookservice.book.Book;
 import org.springframework.data.jpa.repository.JpaRepository;

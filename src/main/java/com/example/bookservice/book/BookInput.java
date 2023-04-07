@@ -1,4 +1,4 @@
-package com.example.bookservice.book.mutation;
+package com.example.bookservice.book;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

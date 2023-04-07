@@ -1,8 +1,7 @@
-package com.example.bookservice.controller;
+package com.example.bookservice.book;
 
 import com.example.bookservice.BaseControllerTest;
 import com.example.bookservice.book.Book;
-import com.example.bookservice.book.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.test.tester.GraphQlTester;

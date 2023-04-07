@@ -1,4 +1,6 @@
-package com.example.bookservice.exception;
+package com.example.bookservice.book;
+
+import com.example.bookservice.exception.GraphQLException;
 
 import java.util.Map;
 

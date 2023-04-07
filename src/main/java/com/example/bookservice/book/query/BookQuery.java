@@ -1,8 +1,8 @@
-package com.example.bookservice.controller.query;
+package com.example.bookservice.book.query;
 
 import com.example.bookservice.book.Book;
-import com.example.bookservice.book.service.BookService;
-import com.example.bookservice.exception.BookException;
+import com.example.bookservice.book.BookService;
+import com.example.bookservice.book.BookException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;

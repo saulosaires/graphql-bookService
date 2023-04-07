@@ -1,8 +1,6 @@
-package com.example.bookservice.author.service;
+package com.example.bookservice.author;
 
 import com.example.bookservice.BaseIntegrationTest;
-import com.example.bookservice.author.Author;
-import com.example.bookservice.exception.AuthorException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,6 @@
-package com.example.bookservice.book.mapper;
+package com.example.bookservice.book;
 
-import com.example.bookservice.book.Book;
-import com.example.bookservice.book.mutation.BookInput;
+import com.example.bookservice.book.mapper.BookMapperImpl;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -9,7 +8,9 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
- class BookMapperTest {
+class BookMapperTest {
+
+    BookMapper bookMapper= new BookMapperImpl();
 
     @Test
     void Given_BookInput_When_callToBook_Then_ShouldReturnBook() {
@@ -22,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
         BookInput bookInput = new BookInput(id, title, isbn, rating, published, null, null);
 
-        Book book = BookMapper.INSTANCE.toBook(bookInput);
+        Book book = bookMapper.toBook(bookInput);
 
         assertEquals(book.getIsbn(), bookInput.isbn());
         assertEquals(book.getPublished(), bookInput.published());

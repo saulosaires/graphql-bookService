@@ -1,12 +1,10 @@
-package com.example.bookservice.book.service;
+package com.example.bookservice.book;
 
 import com.example.bookservice.BaseIntegrationTest;
 import com.example.bookservice.author.Author;
-import com.example.bookservice.author.repository.AuthorRepository;
-import com.example.bookservice.book.Book;
+import com.example.bookservice.author.AuthorRepository;
 import com.example.bookservice.category.Category;
-import com.example.bookservice.category.repository.CategoryRepository;
-import com.example.bookservice.exception.BookException;
+import com.example.bookservice.category.CategoryRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +34,7 @@ class BookServiceTest extends BaseIntegrationTest {
         Book book = bookService.findById(1L);
 
         assertEquals(1L, book.getId());
-        assertEquals(LocalDate.now().minusMonths(8), book.getPublished() );
+        assertEquals(LocalDate.now().minusMonths(8), book.getPublished());
         assertEquals(4, book.getRating());
         assertEquals("Narnia", book.getTitle());
 

@@ -1,9 +1,7 @@
-package com.example.bookservice.book.validate;
+package com.example.bookservice.book;
 
 import com.example.bookservice.author.Author;
-import com.example.bookservice.book.Book;
 import com.example.bookservice.category.Category;
-import com.example.bookservice.exception.BookException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

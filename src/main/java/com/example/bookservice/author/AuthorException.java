@@ -1,4 +1,6 @@
-package com.example.bookservice.exception;
+package com.example.bookservice.author;
+
+import com.example.bookservice.exception.GraphQLException;
 
 public class AuthorException extends GraphQLException {
 

@@ -1,7 +1,5 @@
-package com.example.bookservice.book.validate;
+package com.example.bookservice.book;
 
-import com.example.bookservice.book.Book;
-import com.example.bookservice.exception.BookException;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 

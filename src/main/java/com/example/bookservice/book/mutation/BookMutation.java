@@ -1,19 +1,19 @@
-package com.example.bookservice.controller.mutation;
+package com.example.bookservice.book.mutation;
 
-import com.example.bookservice.exception.BookException;
-import com.example.bookservice.facade.BookFacade;
 import com.example.bookservice.book.Book;
-import com.example.bookservice.book.mutation.BookInput;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.bookservice.book.BookInput;
+import com.example.bookservice.book.BookException;
+import com.example.bookservice.book.BookFacade;
+import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
+@RequiredArgsConstructor
 public class BookMutation {
 
-    @Autowired
-    BookFacade bookFacade;
+    private final BookFacade bookFacade;
 
     @MutationMapping
     public Book createBook(@Argument BookInput book) {
@@ -26,8 +26,8 @@ public class BookMutation {
     }
 
     @MutationMapping
-    public Book updateBookRating(@Argument Long id,@Argument Double rating) throws BookException {
-        return bookFacade.updateRating(id,rating);
+    public Book updateBookRating(@Argument Long id, @Argument Double rating) throws BookException {
+        return bookFacade.updateRating(id, rating);
     }
 
 }

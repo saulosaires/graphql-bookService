@@ -1,11 +1,11 @@
 package com.example.bookservice;
 
 import com.example.bookservice.author.Author;
-import com.example.bookservice.author.repository.AuthorRepository;
+import com.example.bookservice.author.AuthorRepository;
 import com.example.bookservice.book.Book;
-import com.example.bookservice.book.repository.BookRepository;
+import com.example.bookservice.book.BookRepository;
 import com.example.bookservice.category.Category;
-import com.example.bookservice.category.repository.CategoryRepository;
+import com.example.bookservice.category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

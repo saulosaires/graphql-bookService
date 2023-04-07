@@ -1,4 +1,4 @@
-package com.example.bookservice.category.repository;
+package com.example.bookservice.category;
 
 import com.example.bookservice.category.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
