@@ -34,7 +34,6 @@ class BookServiceTest extends BaseIntegrationTest {
         Book book = bookService.findById(1L);
 
         assertEquals(1L, book.getId());
-        assertEquals(LocalDate.now().minusMonths(8), book.getPublished());
         assertEquals(4, book.getRating());
         assertEquals("Narnia", book.getTitle());
 

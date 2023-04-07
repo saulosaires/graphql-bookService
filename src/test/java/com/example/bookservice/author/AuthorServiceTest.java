@@ -31,7 +31,7 @@ class AuthorServiceTest extends BaseIntegrationTest {
 
         AuthorException thrown = Assertions.assertThrows(AuthorException.class, () -> authorService.findById(0L));
 
-        assertEquals("Author not found", thrown.getMessage());
+        assertEquals("Author not found id=[0]", thrown.getMessage());
 
     }
 

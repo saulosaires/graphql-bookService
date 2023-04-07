@@ -1,6 +1,5 @@
 package com.example.bookservice.book;
 
-import com.example.bookservice.book.mapper.BookMapperImpl;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

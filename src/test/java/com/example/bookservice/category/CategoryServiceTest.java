@@ -28,7 +28,7 @@ class CategoryServiceTest extends BaseIntegrationTest {
 
         CategoryException thrown = Assertions.assertThrows(CategoryException.class, () -> categoryService.findById(0L));
 
-        assertEquals("Category not found", thrown.getMessage());
+        assertEquals("Category not found id=[0]", thrown.getMessage());
 
     }
 
